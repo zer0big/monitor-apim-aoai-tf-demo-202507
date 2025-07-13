@@ -1,19 +1,19 @@
 variable "resource_group_name" {
   description = "리소스 그룹의 이름"
   type        = string
-  default     = "rg-tf-apim-aoai-demo-tdg"
+  default     = "rg-tf-apim-aoai-demo"
 }
 
 variable "location" {
   description = "리소스가 배포될 Azure 지역"
   type        = string
-  default     = "East US"
+  default     = "eastus"
 }
 
 variable "apim_name" {
   description = "API Management 인스턴스의 이름"
   type        = string
-  default     = "tf-apim-aoai-demo-tdg"
+  default     = "tf-apim-aoai-demo-20250713"
 }
 
 variable "apim_publisher_name" {
@@ -47,7 +47,7 @@ variable "openai_services" {
   }))
   default = {
     aoai_service_1 = {
-      name            = "tf-aoai-service-1"
+      name            = "tf-aoai-svc-01"
       location        = "eastus"
       sku_name        = "S0"
       deployment_name = "gpt-4o"
@@ -56,7 +56,7 @@ variable "openai_services" {
       capacity        = 10 // 예시: 10 Provisioned Throughput Units (PTU)
     }
     aoai_service_2 = {
-      name            = "tf-aoai-service-2"
+      name            = "tf-aoai-svc-02"
       location        = "westus"
       sku_name        = "S0"
       deployment_name = "gpt-4o"

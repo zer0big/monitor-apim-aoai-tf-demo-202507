@@ -15,7 +15,7 @@ output "log_analytics_workspace_id" {
 
 output "application_insights_id" {
   description = "The ID of the Application Insights instance."
-  value       = azurerm_application_insights.appi.id
+  value       = azurerm_application_insights.appins.id
 }
 
 output "openai_endpoints" {

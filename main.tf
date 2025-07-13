@@ -10,7 +10,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "Azure Subscription ID" // 필요한 경우 여기에 구독 ID를 직접 지정하거나, 환경 변수 (ARM_SUBSCRIPTION_ID)로 설정하세요.
+  subscription_id = "Your Subscription ID" // !!! 배포 시 구독 ID 변경 !!! --> 상용환경에서는 환경 변수 등 처리 필요.
 }
 
 # 리소스 그룹 생성
@@ -39,8 +39,8 @@ resource "azurerm_log_analytics_workspace" "law" {
 }
 
 # Application Insights 생성 (APIM Diagnostic Setting과는 별개로 APIM 내부 로깅을 위함)
-resource "azurerm_application_insights" "appi" {
-  name                = "${var.resource_group_name}-appi"
+resource "azurerm_application_insights" "appins" {
+  name                = "${var.resource_group_name}-appins"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   application_type    = "web"
@@ -83,10 +83,10 @@ resource "azurerm_api_management_logger" "apim_ai_logger" {
   name                = "application-insights-logger"
   api_management_name = azurerm_api_management.apim.name
   resource_group_name = azurerm_resource_group.rg.name
-  resource_id         = azurerm_application_insights.appi.id
+  resource_id         = azurerm_application_insights.appins.id
 
   application_insights {
-    instrumentation_key = azurerm_application_insights.appi.instrumentation_key
+    instrumentation_key = azurerm_application_insights.appins.instrumentation_key
   }
 }
 
