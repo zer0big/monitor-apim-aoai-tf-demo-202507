@@ -1,3 +1,4 @@
+# variables.tf
 variable "resource_group_name" {
   description = "리소스 그룹의 이름"
   type        = string
@@ -37,26 +38,23 @@ variable "apim_sku_name" {
 variable "openai_services" {
   description = "A map of Azure OpenAI service configurations."
   type = map(object({
-    name            = string
     location        = string
     sku_name        = string
     deployment_name = string
     model_name      = string
     model_version   = string
-    capacity        = number // OpenAI 배포의 PTU 용량
+    capacity        = number
   }))
   default = {
-    aoai_service_1 = {
-      name            = "tf-aoai-svc-01"
+    service01 = { 
       location        = "eastus"
       sku_name        = "S0"
       deployment_name = "gpt-4o"
       model_name      = "gpt-4o"
-      model_version   = "2024-11-20" // 최신 gpt-4o 버전 확인 후 사용
-      capacity        = 10 // 예시: 10 Provisioned Throughput Units (PTU)
-    }
-    aoai_service_2 = {
-      name            = "tf-aoai-svc-02"
+      model_version   = "2024-11-20" # 최신 gpt-4o 버전 확인 후 사용
+      capacity        = 20 // 예시: 20 PTU
+},
+    service02 = {
       location        = "westus"
       sku_name        = "S0"
       deployment_name = "gpt-4o"
