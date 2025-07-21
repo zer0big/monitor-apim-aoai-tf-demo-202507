@@ -10,6 +10,8 @@
 1. [Azure SA 업무 환경 구성 - Part 1](https://zerobig-k8s.tistory.com/152)  
 2. [Azure SA 업무 환경 구성 - Part 2](https://zerobig-k8s.tistory.com/153)
 
+## 배포결과
+
 ![리소스 배포 결과](https://github.com/zer0big/monitor-apim-aoai-tf-demo-202507/blob/main/20250721_104240.png)
 
 
