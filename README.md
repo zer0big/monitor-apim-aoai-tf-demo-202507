@@ -7,8 +7,11 @@
 # 실행방법
 
 먼저 Azure SA로서 Azure CLI, Git 및 Terraform 등 업무 수행 상 환경 구성이 안된 경우, 다음 블로그 글을 참고하여 Azure SA 업무 환경을 구성한다.
-https://zerobig-k8s.tistory.com/152
-https://zerobig-k8s.tistory.com/153
+1. [Azure SA 업무 환경 구성 - Part 1](https://zerobig-k8s.tistory.com/152)  
+2. [Azure SA 업무 환경 구성 - Part 2](https://zerobig-k8s.tistory.com/153)
+
+![리소스 배포 결과](https://github.com/zer0big/monitor-apim-aoai-tf-demo-202507/blob/main/220250721_104240.png)
+
 
 1. Terminal 실행
 2. git clone https://github.com/zer0big/monitor-apim-aoai-tf-demo-202507.git
