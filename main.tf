@@ -16,14 +16,12 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "1199b626-a317-4559-9289-caba7859ee88"
 #  subscription_id = "Your Subscription ID" // !!! 배포 시 구독 ID 변경 !!! --> 상용환경에서는 환경 변수 등 처리 필요.
 }
 
 provider "random" {
   # random provider는 특별한 설정 불필요
 }
-# END: ADDED
 
 # 리소스 그룹 생성
 resource "azurerm_resource_group" "rg" {
@@ -50,7 +48,7 @@ resource "azurerm_log_analytics_workspace" "law" {
   retention_in_days   = 30
 }
 
-# Application Insights 생성 (APIM Diagnostic Setting과는 별개로 APIM 내부 로깅을 위함)
+# Application Insights 생성 
 resource "azurerm_application_insights" "appins" {
   name                = local.appins_name
   location            = azurerm_resource_group.rg.location
