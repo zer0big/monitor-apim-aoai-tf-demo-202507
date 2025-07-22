@@ -1,6 +1,6 @@
 # locals.tf
 
-# 고유 리소스 식별을 위한 무작위 숫자 문자열 생성 (8자리, 숫자만)
+# 고유 리소스 식별을 위한 무작위 숫자 문자열 생성 (3자리, 숫자만)
 resource "random_string" "resource_id_suffix" {
   length  = 3
   special = false
